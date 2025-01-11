@@ -1,0 +1,121 @@
+/* src/styles/Home/NewProducts.scss */
+@import '../variables.scss';
+@import '../_sharedCard.scss';
+
+/* Kontejner */
+.new-products {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  background-color: transparent;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 2rem;
+  }
+
+  
+}
+
+.new-products-slider {
+    .slick-list {
+        /* vyrovnávací záporné marginy, aby se to nezarovnalo špatně */
+        margin: 0 -12px; 
+      }
+    
+      .slick-slide {
+        /* horizontální padding – to je ta mezera kolem itemu */
+        padding: 0 8px;
+        box-sizing: border-box; 
+      }
+  }
+
+/* Obal jedné karty ve slideru */
+.new-product-card {
+  padding: 0 8px;
+}
+
+/* Karta */
+.new-card {
+  @extend .unified-card; /* stejné styly karty jako .featured-card */
+}
+
+/* Meta části */
+.new-card .ant-card-meta-title a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.new-card .ant-card-meta-description {
+  color: #888;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Tlačítko */
+.new-add-to-cart-button {
+  width: 100%;
+}
+
+/* Odkazy */
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+a:hover {
+  text-decoration: underline !important;
+  color: #1890ff !important; 
+}
+
+/* Responzivní úpravy */
+@media (min-width: $breakpoint-xl) and (max-width: #{($breakpoint-xxl - 1px)}) {
+  .new-products h2 {
+    font-size: 1.8rem;
+  }
+  .new-card {
+    max-width: 350px; 
+  }
+}
+
+@media (min-width: $breakpoint-lg) and (max-width: #{($breakpoint-xl - 1px)}) {
+  .new-products h2 {
+    font-size: 1.6rem;
+  }
+  .new-card {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: #{($breakpoint-lg - 1px)}) {
+  .new-products h2 {
+    font-size: 1.4rem;
+  }
+  .new-card {
+    max-width: 250px; 
+  }
+}
+
+@media (min-width: $breakpoint-sm) and (max-width: #{($breakpoint-md - 1px)}) {
+  .new-products h2 {
+    font-size: 1.2rem;
+  }
+  .new-card {
+    max-width: 200px; 
+  }
+}
+
+@media (max-width: #{($breakpoint-sm - 1px)}) {
+  .new-products h2 {
+    font-size: 1rem;
+  }
+  .new-card {
+    max-width: 100%; 
+  }
+}

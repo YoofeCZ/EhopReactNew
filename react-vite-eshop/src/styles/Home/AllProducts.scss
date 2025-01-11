@@ -1,0 +1,94 @@
+/* src/styles/Home/AllProducts.scss */
+@import '../variables.scss';
+@import '../_sharedCard.scss';
+
+.all-products {
+  padding: 24px 0;
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: transparent;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 2rem;
+  }
+
+  /* Tady definujeme .products-grid s CSS Gridem */
+  .products-grid {
+    display: grid;
+    gap: 16px;
+    /* Tady zvolíme kolik sloupců bude “výchozích” na extrémně velkém 
+       rozlišení (třeba nad 1400px). Dej třeba 6 sloupců. */
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /* Každá karta – unify a styl */
+  .card-wrapper .ant-card {
+    @extend .unified-card; 
+    cursor: pointer;
+  }
+
+  .ant-card-meta-title {
+    font-weight: bold;
+    color: #001529;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .ant-card-meta-description {
+    color: #888;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+
+    &:hover {
+      text-decoration: underline !important;
+      color: #1890ff !important;
+    }
+  }
+
+  .load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+  }
+}
+
+/* A teď breakpoints vždycky co 200 px 
+   – 1400px, 1200px, 1000px, 800px, 600px, 400px atd. */
+
+@media (max-width: 1400px) {
+  .products-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

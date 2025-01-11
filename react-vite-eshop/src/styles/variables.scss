@@ -1,0 +1,14 @@
+/* src/styles/variables.scss */
+
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1400px;
+$breakpoint-xxl: 1600px; /* Přidán nový breakpoint */
+
+$breakpoint-sm-max: ($breakpoint-sm - 1px);
+$breakpoint-md-max: ($breakpoint-md - 1px);
+$breakpoint-lg-max: ($breakpoint-lg - 1px);
+$breakpoint-xl-max: ($breakpoint-xl - 1px);
+$breakpoint-xxl-max: ($breakpoint-xxl - 1px); /* Přidána maximální hodnota */

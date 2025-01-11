@@ -1,0 +1,60 @@
+/* src/styles/Home.scss */
+
+/* Import proměnných */
+@import './variables.scss';
+
+.home-page {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 70px;
+  background-color: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+}
+
+.products-section {
+  /* Odstraněno negativní odsazení */
+  /* margin-top: -100px; */
+  margin-top: 0; 
+}
+
+/* Responzivní úpravy */
+@media (min-width: $breakpoint-lg) and (max-width: #{($breakpoint-xl - 1px)}) {
+  .home-page {
+    padding: 60px;
+  }
+
+  .products-section {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: #{($breakpoint-lg - 1px)}) {
+  .home-page {
+    padding: 50px;
+  }
+
+  .products-section {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: $breakpoint-sm) and (max-width: #{($breakpoint-md - 1px)}) {
+  .home-page {
+    padding: 40px;
+  }
+
+  .products-section {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: #{($breakpoint-sm - 1px)}) {
+  .home-page {
+    padding: 30px;
+  }
+
+  .products-section {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,143 @@
+/* src/styles/Categories.scss */
+
+/* Import proměnných */
+@import './variables.scss';
+
+.categories {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.categories h2 {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 2rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.categories .ant-card {
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 100%; // pokud nepotřebuješ fixní výšku, můžeš smazat, 
+                     ale 100% tady obvykle jen zabírá vert. prostor 
+                     podle rodiče. Nechávám beze změny. */
+}
+
+.categories .ant-card-meta-title {
+  font-weight: bold;
+  color: #001529;
+  text-align: center;
+}
+
+.categories .ant-card-meta-description {
+  color: #1890ff;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Obrázek */
+.category-image-container {
+  width: 100%;
+  /* height: 200px; // Můžeš změnit na auto dle potřeby */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #f0f2f5;
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Tlačítka */
+.add-to-cart-button {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.category-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* "Zobrazit další kategorie" */
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* Odkazy */
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+a:hover {
+  text-decoration: underline !important;
+  color: #1890ff !important;
+}
+
+/* Breakpointy */
+@media (min-width: $breakpoint-lg) and (max-width: #{($breakpoint-xl - 1px)}) {
+  .categories h2 {
+    font-size: 1.8rem;
+  }
+  .category-image-container {
+    /* height: 180px; */
+    height: auto;
+  }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: #{($breakpoint-lg - 1px)}) {
+  .categories h2 {
+    font-size: 1.6rem;
+  }
+  .category-image-container {
+    /* height: 160px; */
+    height: auto;
+  }
+}
+
+@media (min-width: $breakpoint-sm) and (max-width: #{($breakpoint-md - 1px)}) {
+  .categories h2 {
+    font-size: 1.4rem;
+  }
+  .category-image-container {
+    /* height: 140px; */
+    height: auto;
+  }
+}
+
+@media (max-width: #{($breakpoint-xs - 1px)}) {
+  .categories h2 {
+    font-size: 1.2rem;
+  }
+  .category-image-container {
+    /* height: 120px; */
+    height: auto;
+  }
+  .categories {
+    padding: 10px 0;
+  }
+  .filters {
+    gap: 8px;
+  }
+}

@@ -1,0 +1,91 @@
+/* src/styles/ProductDetail.scss */
+
+@import './variables.scss';
+
+.product-detail-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.product-detail-top {
+  /* AntD Row/Col style - OK */
+}
+
+.product-images {
+  width: 100%;
+}
+
+.product-image {
+  width: 100%;
+  height: auto; /* Umožní obrázkům být responsivní */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.short-description {
+  margin-bottom: 20px;
+}
+
+.product-details {
+  margin-top: 20px;
+}
+
+.product-details Paragraph {
+  margin-bottom: 10px;
+}
+
+.product-description {
+  margin-top: 60px;
+}
+
+/* Breakpointy */
+@media (min-width: $breakpoint-xl) and (max-width: #{($breakpoint-xl - 1px)}) {
+  .product-detail-container {
+    max-width: 1400px;
+  }
+  .product-description {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: $breakpoint-lg) and (max-width: #{($breakpoint-xl - 1px)}) {
+  .product-detail-container {
+    max-width: 1200px;
+  }
+  .product-description {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: #{($breakpoint-lg - 1px)}) {
+  .product-detail-container {
+    max-width: 992px;
+  }
+  .product-description {
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: $breakpoint-sm) and (max-width: #{($breakpoint-md - 1px)}) {
+  .product-detail-container {
+    max-width: 768px;
+  }
+  .product-description {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: #{($breakpoint-sm - 1px)}) {
+  .product-detail-container {
+    max-width: 576px;
+  }
+  .product-description {
+    margin-top: 10px;
+  }
+}

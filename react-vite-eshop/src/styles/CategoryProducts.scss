@@ -1,0 +1,135 @@
+/* src/styles/Home/CategoryProducts.scss */
+
+@import './variables.scss';
+
+.category-products {
+  padding: 24px 0;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: transparent;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 2rem;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 1.2rem;
+    color: #555;
+  }
+
+  /* Ant Design Row a Col s negativními marginy:
+     -8px je v pořádku pro grid vyrovnání, necháváme */
+  .ant-row {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+
+  .ant-col {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  /* Původně: overflow: hidden; 
+     Může zbytečně ořezávat obsah */
+  /* overflow: hidden; */
+}
+
+.toggle-filters-button {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* Responzivní úpravy podle nových breakpointů */
+@media (min-width: $breakpoint-xl) and (max-width: #{($breakpoint-xxl - 1px)}) {
+  .category-products h2 {
+    font-size: 1.8rem;
+  }
+  .category-products p {
+    font-size: 1rem;
+  }
+  /* Produktový obrázek - pokud nechceš fixní výšku, hoď na auto */
+  .product-image {
+    /* height: 180px; */
+    height: auto;
+    object-fit: cover;
+  }
+  .product-card {
+    max-width: 350px;
+  }
+}
+
+@media (min-width: $breakpoint-lg) and (max-width: #{($breakpoint-xl - 1px)}) {
+  .category-products h2 {
+    font-size: 1.6rem;
+  }
+  .category-products p {
+    font-size: 0.9rem;
+  }
+  .product-image {
+    /* height: 160px; */
+    height: auto;
+    object-fit: cover;
+  }
+  .product-card {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: #{($breakpoint-lg - 1px)}) {
+  .category-products h2 {
+    font-size: 1.4rem;
+  }
+  .category-products p {
+    font-size: 0.8rem;
+  }
+  .product-image {
+    /* height: 140px; */
+    height: auto;
+    object-fit: cover;
+  }
+  .product-card {
+    max-width: 250px;
+  }
+}
+
+@media (min-width: $breakpoint-sm) and (max-width: #{($breakpoint-md - 1px)}) {
+  .category-products h2 {
+    font-size: 1.2rem;
+  }
+  .category-products p {
+    font-size: 0.7rem;
+  }
+  .product-image {
+    /* height: 120px; */
+    height: auto;
+    object-fit: cover;
+  }
+  .product-card {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: #{($breakpoint-sm - 1px)}) {
+  .category-products h2 {
+    font-size: 1rem;
+  }
+  .category-products p {
+    font-size: 0.6rem;
+  }
+  .product-image {
+    /* height: 100px; */
+    height: auto;
+    object-fit: cover;
+  }
+  .category-products {
+    padding: 12px 0;
+  }
+  .filters {
+    gap: 8px;
+  }
+}

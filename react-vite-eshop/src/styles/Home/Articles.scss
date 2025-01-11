@@ -1,0 +1,79 @@
+/* src/styles/Home/Articles.scss */
+
+/* Import proměnných */
+@import '../variables.scss';
+
+.articles-section {
+  padding: 20px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 2rem;
+  }
+
+  .article-image-container {
+    width: 100%;
+    /* height: 200px; // Pro auto-výšku zakomentuj */
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f0f2f5;
+  }
+
+  .article-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .small-articles-row {
+    margin-top: 20px;
+  }
+}
+
+/* Breakpointy */
+@media (min-width: $breakpoint-lg) and (max-width: #{($breakpoint-xl - 1px)}) {
+  .articles-section h2 {
+    font-size: 1.8rem;
+  }
+  .article-image-container {
+    /* height: 180px; */
+    height: auto;
+  }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: #{($breakpoint-lg - 1px)}) {
+  .articles-section h2 {
+    font-size: 1.6rem;
+  }
+  .article-image-container {
+    /* height: 160px; */
+    height: auto;
+  }
+}
+
+@media (min-width: $breakpoint-sm) and (max-width: #{($breakpoint-md - 1px)}) {
+  .articles-section h2 {
+    font-size: 1.4rem;
+  }
+  .article-image-container {
+    /* height: 140px; */
+    height: auto;
+  }
+}
+
+@media (max-width: #{($breakpoint-sm - 1px)}) {
+  .articles-section h2 {
+    font-size: 1.2rem;
+  }
+  .article-image-container {
+    /* height: 120px; */
+    height: auto;
+  }
+  .articles-section {
+    padding: 10px;
+  }
+}

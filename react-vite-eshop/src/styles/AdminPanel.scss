@@ -1,0 +1,99 @@
+/* src/styles/AdminPanel.scss */
+
+/* Import proměnných */
+@import './variables.scss';
+
+/* Základní nastavení pro Admin Panel */
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 1600px; /* Maximální šířka pro desktop */
+  margin: 0 auto; /* Vycentrování na střed */
+  background-color: #f0f2f5; /* Ant Design defaultní barva pozadí */
+}
+
+/* Stylování nadpisu Admin Panel */
+.admin-panel h2 {
+  margin: 0 0 20px 0;
+  color: #001529; /* Primární barva Ant Design */
+  font-size: 28px;
+  text-align: center;
+}
+
+/* Stylování Tabs komponenty */
+.admin-panel .ant-tabs {
+  flex: 1; /* Tabs zaberou zbytek prostoru */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stylování obsahu Tabs */
+.admin-panel .ant-tabs-content {
+  flex: 1; /* Obsah Tabs zaberá zbytek prostoru */
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  overflow-y: auto; /* Povolí scrollování, pokud je obsah delší */
+}
+
+/* Stylování navigačních lišt Tabs */
+.admin-panel .ant-tabs-nav {
+  margin-bottom: 0; /* Odstraní spodní okraj */
+}
+
+/* Stylování jednotlivých Tabs */
+.admin-panel .ant-tabs-tab {
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+/* Aktivní Tab */
+.admin-panel .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #1890ff; /* Primární barva Ant Design */
+  font-weight: 500;
+}
+
+/* Hover efekt pro Tabs */
+.admin-panel .ant-tabs-tab:hover .ant-tabs-tab-btn {
+  color: #40a9ff;
+}
+
+/* Stylování navigačních šipek Tabs */
+.admin-panel .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
+  margin-left: 0;
+}
+
+/* Responzivní úpravy podle nových breakpointů */
+
+@media (min-width: $breakpoint-xl) and (max-width: #{($breakpoint-xxl - 1px)}) {
+    .admin-panel h2 {
+        font-size: 26px;
+    }
+}
+
+@media (min-width: $breakpoint-lg) and (max-width: #{($breakpoint-xl - 1px)}) {
+    .admin-panel h2 {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: #{($breakpoint-lg - 1px)}) {
+    .admin-panel h2 {
+        font-size: 22px;
+    }
+}
+
+@media (min-width: $breakpoint-sm) and (max-width: #{($breakpoint-md - 1px)}) {
+    .admin-panel h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: #{($breakpoint-sm - 1px)}) {
+    .admin-panel h2 {
+        font-size: 18px;
+    }
+}

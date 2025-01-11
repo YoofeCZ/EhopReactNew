@@ -1,0 +1,21 @@
+/* src/styles/Kosik.scss */
+
+/* Import proměnných */
+@import './variables.scss';
+
+.kosik {
+    max-width: 1600px; /* Maximální šířka pro desktop */
+    margin: 0 auto; /* Vycentrování na střed */
+}
+
+.kosik-summary {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kosik-summary h3 {
+    margin: 0;
+}
+

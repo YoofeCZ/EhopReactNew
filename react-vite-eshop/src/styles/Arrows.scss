@@ -1,0 +1,32 @@
+/* src/styles/Arrows.scss */
+
+/* Import proměnných */
+@import './variables.scss';
+
+/* Styl pro levé a pravé šipky */
+.slick-prev, .slick-next {
+    color: #333 !important; /* Výchozí barva šipky */
+    background-color: rgba(0, 0, 0, 0.2) !important; /* Jemné pozadí */
+    border-radius: 50% !important; /* Kulatý tvar */
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 10 !important;
+    transition: background-color 0.3s, color 0.3s !important; /* Animace pro hover */
+}
+
+.slick-prev:hover, .slick-next:hover {
+    background-color: #1890ff !important; /* Zvýrazněná barva při najetí */
+    color: #fff !important; /* Barva šipky při hover */
+}
+
+/* Specifické pozice šipek */
+.slick-prev {
+    left: -50px !important; /* Posunutí šipky vlevo od slideru */
+}
+
+.slick-next {
+    right: -50px !important; /* Posunutí šipky vpravo od slideru */
+}

@@ -1,0 +1,198 @@
+/* src/styles/Navbar.scss */
+
+/* Import proměnných */
+@import './variables.scss';
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1600px; /* Maximální šířka pro desktop */
+    margin: 0 auto; /* Vycentrování na střed */
+    height: 100%;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo-img {
+  height: 100px;
+  padding-right: 0px;
+}
+
+.navbar-search {
+  max-width: 300px;
+  margin-left: 0px;
+  margin-right: 200px;
+  flex: 1;
+}
+
+.navbar-menu {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  background: #001529;
+  border-bottom: none;
+  border-radius: 8px !important;
+}
+
+.navbar-menu .ant-menu-item {
+  color: white !important;
+  display: flex;
+  align-items: center;
+  height: 35px;
+  border-radius: 8px !important;
+  margin: 0 2px;
+  font-size: 16px; /* Nastavení velikosti textu */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Přidání animace */
+}
+
+.navbar-menu .ant-menu-item:hover {
+  background-color: rgba(24, 144, 255, 0.0) !important;
+  color: white !important;
+  transform: scale(1.1); /* Zvětšení při najetí myší */
+}
+
+.navbar-menu .ant-menu-item-selected {
+  background-color: #1890ff !important;
+  color: white !important;
+}
+
+.navbar-menu .ant-menu-item a {
+  color: #ffffff; /* Změna barvy odkazu */
+  text-decoration: none; /* Odstranění podtržení */
+}
+
+.navbar-menu .ant-menu-item a:hover {
+  color: #ffffff !important; /* Barva při najetí myší */
+  text-decoration: none !important; /* Přidání podtržení při najetí myší */
+}
+
+.navbar-menu .ant-menu-item-selected a {
+  background-color: #1890ff !important;
+  color: white !important;
+  text-decoration: underline;
+}
+
+/* Třída pro Drawer v Navbaru */
+.navbar-drawer {
+  color: #000000;                            /* Černá barva textu */
+  font-family: 'BebasRegular', sans-serif;   /* Font */
+  font-size: 25px;                           /* Velikost písma */
+  line-height: 1.3;                          /* Výška řádku */
+
+  /* Pokud chceš větší mezery mezi "položkami" v draweru */
+  .ant-menu-item {
+    margin: 25px 0;  /* 25px nad a pod */
+  }
+
+  /* Padding Drawer těla */
+  .ant-drawer-body {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+}
+
+.navbar-drawer-button {
+  color: white;
+  font-size: 24px;
+}
+
+/* Optional: Zobrazení Sidebaru jako mobilního bloku */
+.app-sidebar-mobile {
+  display: block;
+  padding: 16px;
+  background-color: #001529;
+}
+
+@font-face {
+  font-family: 'BebasRegular'; /* Název fontu */
+  src: url('../../public/fonts/Montserrat.ttf') format('truetype'); /* Cesta k fontu */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Responzivní úpravy podle nových breakpointů */
+
+@media (min-width: $breakpoint-xl) and (max-width: #{($breakpoint-xxl - 1px)}) {
+    .navbar-logo-img {
+        height: 140px;
+    }
+
+    .navbar-search {
+        max-width: 280px;
+        margin-right: 180px;
+    }
+
+    .navbar-menu {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: $breakpoint-lg) and (max-width: #{($breakpoint-xl - 1px)}) {
+    .navbar-logo-img {
+        height: 130px;
+    }
+
+    .navbar-search {
+        max-width: 250px;
+        margin-right: 160px;
+    }
+
+    .navbar-menu {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: #{($breakpoint-lg - 1px)}) {
+    .navbar-logo-img {
+        height: 120px;
+    }
+
+    .navbar-search {
+        max-width: 220px;
+        margin-right: 140px;
+    }
+
+    .navbar-menu {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: $breakpoint-sm) and (max-width: #{($breakpoint-md - 1px)}) {
+    .navbar-logo-img {
+        height: 110px;
+    }
+
+    .navbar-search {
+        max-width: 200px;
+        margin-right: 120px;
+    }
+
+    .navbar-menu {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: #{($breakpoint-sm - 1px)}) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-logo-img {
+        height: 100px;
+    }
+
+    .navbar-search {
+        max-width: 180px;
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+
+    .navbar-menu {
+        width: 100%;
+    }
+}

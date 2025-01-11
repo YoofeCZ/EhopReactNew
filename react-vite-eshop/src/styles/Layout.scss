@@ -1,0 +1,224 @@
+/* src/styles/Layout.scss */
+
+/* Import proměnných */
+@import './variables.scss';
+
+/* Celkový layout */
+.app-layout {
+  max-width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 1000;
+  background: #001529;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Sidebar */
+.app-sidebar {
+  background: #001529;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 80px; /* Posunutí pod navbar */
+  overflow-y: auto;
+}
+
+/* Mobilní Sidebar */
+.app-sidebar-mobile {
+  width: 100%;
+  margin-bottom: 10px;
+  display: none; 
+}
+
+/* Hlavní tělo */
+.app-body {
+  display: grid;
+  grid-template-columns: 18% 1fr 18%;
+  grid-gap: 0px;
+  width: 100%;
+  flex: 1;
+  margin: 0 auto;
+  margin-top: 0px;
+  /* ZRUŠENO:
+     overflow: hidden; 
+     Protože mohlo useknout obsah slideru */
+  overflow-x: hidden; /* Jen pokud nechceš horizontální scroll */
+  /* NEBO: overflow: visible; */
+}
+
+/* Levá a pravá reklama */
+.ad-space-left,
+.ad-space-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+/* Obsah */
+.app-content {
+  background: #f0f2f5;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Obrázky uvnitř reklam */
+.ad-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Footer */
+.app-footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 1000;
+  background-color: #001529;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive Breakpoints */
+
+/* Pro Extra extra velké obrazovky (≥1600px) */
+@media (min-width: $breakpoint-xxl) {
+  .app-body {
+    grid-template-columns: 18% 1fr 18%;
+  }
+}
+
+/* Pro Extra velké obrazovky (≥1400px a <1600px) */
+@media (min-width: $breakpoint-xl) and (max-width: #{($breakpoint-xxl - 1px)}) {
+  .app-body {
+    grid-template-columns: 18% 1fr 18%;
+  }
+
+  /* Pokud nepotřebuješ posouvat nahoru, zruš: */
+  .app-content {
+    /* margin-top: -50px !important;  */
+    margin-top: 0 !important;
+  }
+}
+
+/* Pro Extra velké obrazovky (≥1200px a <1400px) */
+@media (min-width: $breakpoint-lg) and (max-width: #{($breakpoint-xl - 1px)}) {
+  .app-body {
+    grid-template-columns: 18% 1fr 18%;
+  }
+  .app-content {
+    /* margin-top: -50px !important; */
+    margin-top: 0 !important;
+  }
+}
+
+/* Pro velké obrazovky (≥992px a <1200px) */
+@media (min-width: $breakpoint-md) and (max-width: #{($breakpoint-lg - 1px)}) {
+  .app-body {
+    grid-template-columns: 18% 1fr 18%;
+  }
+  .app-content {
+    /* margin-top: -50px !important; */
+    margin-top: 0 !important;
+  }
+}
+
+/* Pro malé a střední obrazovky (≥576px a <992px) */
+@media (min-width: $breakpoint-xs) and (max-width: #{($breakpoint-md - 1px)}) {
+  .app-body {
+    grid-template-columns: 1fr; 
+  }
+
+  .ad-space-left,
+  .ad-space-right {
+    display: none; 
+  }
+
+  .app-sidebar-mobile {
+    display: block; 
+  }
+
+  .app-sidebar {
+    margin: 0;
+    padding: 10px;
+    padding-top: 50px;
+  }
+
+  .app-header {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  .app-body {
+    margin-top: 60px; 
+    margin-bottom: 60px;
+  }
+
+  .app-footer {
+    height: 100%;
+  }
+
+  .app-content {
+    padding: 10px;
+  }
+}
+
+/* Mobilní verze (pod 576px) */
+@media (max-width: #{($breakpoint-xs - 1px)}) {
+  .app-body {
+    grid-template-columns: 1fr;
+  }
+
+  .ad-space-left,
+  .ad-space-right {
+    display: none;
+  }
+
+  .app-sidebar-mobile {
+    display: block;
+  }
+
+  .app-sidebar {
+    margin: 0;
+    padding: 10px;
+    padding-top: 50px;
+  }
+
+  .app-header {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  .app-body {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .app-footer {
+    height: 100%;
+  }
+
+  .app-content {
+    padding: 10px;
+  }
+}

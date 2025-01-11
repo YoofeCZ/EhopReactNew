@@ -1,0 +1,239 @@
+/* src/styles/Home/SliderBar.scss */
+
+/* Import proměnných */
+@import '../variables.scss';
+
+.slider-bar {
+    width: 64vw; /* Nastaví šířku na 100% viewportu */
+    margin: 0 auto;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -32.3vw; /* Posun pro plnou šířku */
+    margin-right: -50vw; /* Posun pro plnou šířku */
+    height: 100%;
+    margin-bottom: -80px;
+    margin-top: -90px;
+    overflow: hidden; /* Zajistí, že obsah nepřesahuje */
+    z-index: 1;
+}
+
+.slider-slide {
+    position: relative;
+    height: 100%;
+}
+
+.slider-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zajistí správné škálování obrázku */
+    display: block;
+}
+
+.slider-content {
+    position: absolute;
+    bottom: 45%;
+    left: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Zarovnání obsahu na levý okraj */
+    text-align: left;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Přidá tmavé pozadí pro lepší čitelnost textu */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    word-wrap: break-word;
+    z-index: 3; /* Zajistí, že je nad obrázkem */
+}
+
+.slider-content h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+}
+
+.slider-content button {
+    margin-top: 10px;
+}
+
+/* Stylování navigačních šipek */
+.slick-prev:before,
+.slick-next:before {
+    color: #fff; /* Barva šipek */
+    font-size: 30px; /* Velikost šipek */
+    z-index: 2;
+}
+
+/* Možná úprava pozice šipek */
+.slick-prev,
+.slick-next {
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 100px;
+}
+
+/* Ensuring Slick slider fills the slide height */
+.slick-slider,
+.slick-list,
+.slick-track,
+.slick-slide {
+    height: 100%;
+}
+
+/* Responzivní úpravy podle nových breakpointů */
+
+
+
+@media (min-width: 1400px) and (max-width: 2000000px) {
+    .slider-bar {
+        padding-bottom: 140px;
+        width: 64.5vw !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1600px) {
+    .slider-bar {
+        width: 65vw !important;
+        max-width: none;
+        margin: 0;
+        left: 50%;
+        right: 50%;
+        margin-left: -32.3vw !important;
+        margin-right: -50vw;
+        padding-bottom: 40px;
+    }
+
+    .slider-content {
+        bottom: 35%;
+        left: 35%;
+        padding: 15px;
+    }
+
+    .slider-content h2 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: $breakpoint-xl) and (max-width: #{($breakpoint-xxl - 1px)}) {
+    .slider-content {
+        bottom: 40%;
+        left: 40%;
+        padding: 18px;
+    }
+
+    .slider-content h2 {
+        font-size: 22px;
+    }
+    .slider-bar {
+        width: 100vw;
+        max-width: none;
+        margin: 0;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        margin-top: -40px;
+    }
+
+
+}
+
+@media (min-width: $breakpoint-lg) and (max-width: #{($breakpoint-xl - 1px)}) {
+    .slider-content {
+        bottom: 35%;
+        left: 35%;
+        padding: 16px;
+    }
+
+    .slider-content h2 {
+        font-size: 20px;
+    }
+    .slider-bar {
+        width: 100vw;
+        max-width: none;
+        margin: 0;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        margin-top: -40px;
+    }
+}
+
+@media (min-width: $breakpoint-md) and (max-width: #{($breakpoint-lg - 1px)}) {
+    .slider-content {
+        bottom: 30%;
+        left: 30%;
+        padding: 14px;
+    }
+
+    .slider-content h2 {
+        font-size: 18px;
+    }
+    .slider-bar {
+        width: 100vw;
+        max-width: none;
+        margin: 0;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        margin-top: -40px;
+        padding-bottom: 40px;
+    }
+}
+
+@media (min-width: $breakpoint-sm) and (max-width: #{($breakpoint-md - 1px)}) {
+    .slider-content {
+        bottom: 25%;
+        left: 25%;
+        padding: 12px;
+    }
+
+    .slider-content h2 {
+        font-size: 16px;
+    }
+    .slider-bar {
+        width: 100vw;
+        max-width: none;
+        margin: 0;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        margin-top: -40px;
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: #{($breakpoint-sm - 1px)}) {
+    .slider-content {
+        bottom: 20%;
+        left: 20%;
+        padding: 10px;
+    }
+
+    .slider-content h2 {
+        font-size: 14px;
+    }
+    .slider-bar {
+        width: 100vw;
+        max-width: none;
+        margin: 0;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        margin-top: -40px;
+        padding-bottom: 40px;
+    }
+}
+
+
