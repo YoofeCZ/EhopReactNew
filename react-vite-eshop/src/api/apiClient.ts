@@ -4,7 +4,7 @@ import axios from 'axios';
 const baseURL =
   import.meta.env.MODE === 'development'
     ? 'http://localhost:5000/api' // Pro vývoj
-    : 'http://188.175.32.34:5000/api'; // Pro produkci
+    : 'http://static-ip-volitelné/api'; // Pro produkci
 
 // Vytvoření instance Axios s nastavenou baseURL
 const apiClient = axios.create({
